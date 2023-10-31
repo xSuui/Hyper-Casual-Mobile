@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+//using DG.Tweening;
 
 public class FlashColor : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class FlashColor : MonoBehaviour
     public Color color = Color.red;
     public float duration = .3f;
 
-    private Tween _currentTween;
+    //private Tween _currentTween;
 
     private void OnValidate()
     {
@@ -24,11 +24,11 @@ public class FlashColor : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.A))
         {
-            Flash();
+            //Flash();
         }
     }
 
-    public void Flash()
+    /*public void Flash()
     {
         if(_currentTween != null)
         {
@@ -40,5 +40,5 @@ public class FlashColor : MonoBehaviour
         {
             s.DOColor(color, duration).SetLoops(2, LoopType.Yoyo);
         }
-    }
+    }*/
 }
