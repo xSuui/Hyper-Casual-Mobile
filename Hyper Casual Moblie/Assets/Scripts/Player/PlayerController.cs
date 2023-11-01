@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
 using TMPro;
+using DG.Tweening;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -17,6 +18,7 @@ public class PlayerController : Singleton<PlayerController>
     public string tagToCheckEndLine = "EndLine";
 
     public GameObject endScreen;
+    public bool invencible = true;
 
     [Header("Text")]
     public TextMeshPro uiTextPowerUp;
@@ -25,12 +27,12 @@ public class PlayerController : Singleton<PlayerController>
     private bool _canRun;
     private Vector3 _pos;
     private float _currentSpeed;
-
-    public bool invencible = true;
+    private Vector3 _startPosition;
 
 
     private void Start()
     {
+        _startPosition = transform.position;
         ResetSpeed();
 
         //_currentSpeed = speed;
@@ -97,5 +99,25 @@ public class PlayerController : Singleton<PlayerController>
     {
         _currentSpeed = speed;
     }
+
+    public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
+    {
+        /*var p = transform.position;
+        p.y = _startPosition.y + amount;
+        transform.position = p;*/
+
+        transform.DOMoveY(_startPosition.y + amount, animationDuration).SetEase(ease);//.OnComplete(ResetHeight);
+        Invoke(nameof(ResetHeight), duration);
+    }
+
+    public void ResetHeight()
+    {
+        /*var p = transform.position;
+        p.y = _startPosition.y;
+        transform.position = p;*/
+
+        transform.DOMoveY(_startPosition.y, .1f);
+    }
+
     #endregion
 }
