@@ -897,6 +897,17 @@ MonoBehaviour:
   - {fileID: 405543050859951718, guid: 47c51f60e05298b41b7e42e245a99bf5, type: 3}
   - {fileID: 405543050859951718, guid: b1531754f9adff4468368b794d47fc2e, type: 3}
   - {fileID: 405543050859951718, guid: a7994f3a3e41bbb4f9e9c973207e22c9, type: 3}
+  levelPiecesStart:
+  - {fileID: 7750171608326628340, guid: a5cce89abc896df4c911c21fc38ba278, type: 3}
+  levelPieces:
+  - {fileID: 5999139380434576332, guid: 8eb7b451e8e45684d930d0d039a1c6b1, type: 3}
+  - {fileID: 5999139380434576332, guid: c79f93829cffee24bbc48b962e51ea3b, type: 3}
+  levelPiecesEnd:
+  - {fileID: 7750171608326628340, guid: 718b955411a91b942849ea3e4b293d69, type: 3}
+  piecesStartNumber: 3
+  piecesNumber: 5
+  piecesEndNumber: 1
+  timeBetweemPieces: 0.3
   _index: 0
 --- !u!4 &551778561
 Transform:
