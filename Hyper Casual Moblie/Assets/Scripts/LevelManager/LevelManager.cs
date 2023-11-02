@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class LevelManager : MonoBehaviour
 {
@@ -31,7 +32,10 @@ public class LevelManager : MonoBehaviour
     private List<LevelPieceBase> _spawnedPieces = new List<LevelPieceBase>();
     private LevelPieceBasedSetup _currSetup;
 
-
+    [Header("Animation")]
+    public float scaleDuration = .2f;
+    public float scaleTimeBetweenPieces = .1f;
+    public Ease ease = Ease.OutBack;
 
     private void Awake()
     {
@@ -65,17 +69,21 @@ public class LevelManager : MonoBehaviour
     {
         CleanSpawnedPieces();
 
-        if (_currSetup != null)
-        {
-            _index++;
-         
-            if (_index >= levelPieceBasedSetups.Count)
+            if (_currSetup != null)
             {
-                ResetLevelIndex();
-            }
-        }
+                _index++;
 
-        _currSetup = levelPieceBasedSetups[_index];
+                if (_index >= levelPieceBasedSetups.Count)
+                {
+                    ResetLevelIndex();
+                }
+            }
+                {
+                    ResetLevelIndex();
+                }
+
+
+            _currSetup = levelPieceBasedSetups[_index];
 
         for (int i = 0; i < _currSetup.piecesStartNumber; i++)
         {
@@ -92,9 +100,69 @@ public class LevelManager : MonoBehaviour
             CreateLevelPiece(_currSetup.levelPiecesEnd);
         }
 
-        ColorManager.Instance.ChangeColorByType(_currSetup.artType);
+        //ColorManager.Instance.ChangeColorByType(_currSetup.artType);
+        StartCoroutine(ScalePiecesByTime());
 
         //StartCoroutine(CreateLevelPiecesCoroutine());
+    }
+
+    #region tentativa de resolução do bug acima color manager
+    /*private void CreateLevelPieces()
+    {
+        CleanSpawnedPieces();
+        Debug.Log("Before _currSetup is accessed");
+        _currSetup = levelPieceBasedSetups[_index];
+
+
+        if (levelPieceBasedSetups != null && levelPieceBasedSetups.Count > 0)
+        {
+            if (_currSetup == null || _index >= levelPieceBasedSetups.Count)
+            {
+                ResetLevelIndex();
+            }
+
+            _currSetup = levelPieceBasedSetups[_index];
+
+            for (int i = 0; i < _currSetup.piecesStartNumber; i++)
+            {
+                CreateLevelPiece(_currSetup.levelPiecesStart);
+            }
+
+            for (int i = 0; i < _currSetup.piecesNumber; i++)
+            {
+                CreateLevelPiece(_currSetup.levelPieces);
+            }
+
+            for (int i = 0; i < _currSetup.piecesEndNumber; i++)
+            {
+                CreateLevelPiece(_currSetup.levelPiecesEnd);
+            }
+
+            ColorManager.Instance.ChangeColorByType(_currSetup.artType);
+            StartCoroutine(ScalePiecesByTime());
+        }
+        else
+        {
+            Debug.LogError("levelPieceBasedSetups is null or empty. Make sure it's properly initialized.");
+        }
+    }*/
+    #endregion
+
+
+    IEnumerator ScalePiecesByTime()
+    {
+        foreach(var p in _spawnedPieces)
+        {
+            p.transform.localScale = Vector3.zero;
+        }
+
+        yield return null;
+
+        for(int i = 0; i < _spawnedPieces.Count; i++)
+        {
+            _spawnedPieces[i].transform.DOScale(1, scaleDuration).SetEase(ease);
+            yield return new WaitForSeconds(scaleTimeBetweenPieces);
+        }
     }
 
     private void CreateLevelPiece(List<LevelPieceBase> list)

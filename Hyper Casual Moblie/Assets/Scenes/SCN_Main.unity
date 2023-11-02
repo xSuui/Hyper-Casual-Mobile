@@ -950,6 +950,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05be8f9acc2da3d4783384f79980c967, type: 2}
   timeBetweemPieces: 0.3
   _index: 0
+  scaleDuration: 0.1
+  scaleTimeBetweenPieces: 0.1
+  ease: 27
 --- !u!4 &551778561
 Transform:
   m_ObjectHideFlags: 0
@@ -2666,7 +2669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405543050859951718, guid: 47c51f60e05298b41b7e42e245a99bf5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 405543050859951719, guid: 47c51f60e05298b41b7e42e245a99bf5, type: 3}
       propertyPath: m_RootOrder
