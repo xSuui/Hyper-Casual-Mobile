@@ -732,6 +732,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e20167823a30d459856414377997d1, type: 3}
+--- !u!1 &219930128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219930130}
+  - component: {fileID: 219930129}
+  m_Layer: 0
+  m_Name: ArtManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &219930129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219930128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380d3e78674a414469200c282d3ef8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artSetups:
+  - artType: 0
+    gameObject: {fileID: 4221087952568375781, guid: ae9534ec016917f4293b6515f17805a3, type: 3}
+  - artType: 1
+    gameObject: {fileID: 5805365180217508397, guid: 39499576661926f4bbad80c028d38f32, type: 3}
+--- !u!4 &219930130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219930128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.371798, y: 9.463015, z: 45.66176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263183297
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,16 +945,9 @@ MonoBehaviour:
   - {fileID: 405543050859951718, guid: 47c51f60e05298b41b7e42e245a99bf5, type: 3}
   - {fileID: 405543050859951718, guid: b1531754f9adff4468368b794d47fc2e, type: 3}
   - {fileID: 405543050859951718, guid: a7994f3a3e41bbb4f9e9c973207e22c9, type: 3}
-  levelPiecesStart:
-  - {fileID: 7750171608326628340, guid: a5cce89abc896df4c911c21fc38ba278, type: 3}
-  levelPieces:
-  - {fileID: 5999139380434576332, guid: 8eb7b451e8e45684d930d0d039a1c6b1, type: 3}
-  - {fileID: 5999139380434576332, guid: c79f93829cffee24bbc48b962e51ea3b, type: 3}
-  levelPiecesEnd:
-  - {fileID: 7750171608326628340, guid: 718b955411a91b942849ea3e4b293d69, type: 3}
-  piecesStartNumber: 3
-  piecesNumber: 5
-  piecesEndNumber: 1
+  levelPieceBasedSetups:
+  - {fileID: 11400000, guid: 84edc02574ef3a144b9f774ded2bb49d, type: 2}
+  - {fileID: 11400000, guid: 05be8f9acc2da3d4783384f79980c967, type: 2}
   timeBetweemPieces: 0.3
   _index: 0
 --- !u!4 &551778561
