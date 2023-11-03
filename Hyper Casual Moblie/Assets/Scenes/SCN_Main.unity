@@ -1329,6 +1329,7 @@ MonoBehaviour:
   target: {fileID: 1516932008}
   lerpSpeed: 9
   speed: 7
+  ease: 27
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
   endScreen: {fileID: 101415291}

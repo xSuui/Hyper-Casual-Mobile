@@ -14,6 +14,8 @@ public class PlayerController : Singleton<PlayerController>
 
     public float speed = 1f;
 
+    public Ease ease = Ease.OutBack;
+
     public string tagToCheckEnemy = "Enemy";
     public string tagToCheckEndLine = "EndLine";
 
@@ -42,6 +44,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
+        transform.DOScale(Vector3.one, 1).SetEase(ease);
+
         _startPosition = transform.position;
         ResetSpeed();
 
@@ -52,7 +56,13 @@ public class PlayerController : Singleton<PlayerController>
     public void Bounce()
     {
         if(_bounceHelper != null)
+        {
+            transform.DOScale(Vector3.one * 1.2f, 1).SetEase(ease)
+            .OnComplete(() => transform.DOScale(Vector3.one, 1).SetEase(ease));
+
             _bounceHelper.Bounce();
+        }
+
     }
 
     void Update()
@@ -116,6 +126,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         _currentSpeed = f;
     }
+    public void ScaleCharacter(float PowerUpSpeedUp, float duration, Ease easeType)
+    {
+        transform.DOScale(Vector3.one * PowerUpSpeedUp, duration).SetEase(easeType);
+    }
+
 
     public void SetInvencible(bool b = true)
     {
