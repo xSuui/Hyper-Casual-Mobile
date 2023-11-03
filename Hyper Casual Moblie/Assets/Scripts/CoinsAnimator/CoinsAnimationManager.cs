@@ -66,4 +66,5 @@ public class CoinsAnimationManager : Singleton<CoinsAnimationManager>
         itens = itens.OrderBy(
             x => Vector3.Distance(this.transform.position, x.transform.position)).ToList();
     }
+    
 }
