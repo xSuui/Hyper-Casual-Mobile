@@ -41,17 +41,29 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _startPosition;
     private float _baseSpeedToAnimation = 7;
 
+    public void ScaleCharacterSmoothly(float scaleValue, float duration, Ease easeType)
+    {
+        transform.localScale = Vector3.zero; // Comece com escala zero
+        transform.DOScale(Vector3.one * scaleValue, duration).SetEase(easeType);
+        ScaleCharacterSmoothly(1.0f, 1.0f, Ease.OutBack);
+
+    }
+
 
     private void Start()
     {
-        transform.DOScale(Vector3.one, 1).SetEase(ease);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(Vector3.one, 1f).SetEase(ease);
+
 
         _startPosition = transform.position;
         ResetSpeed();
 
+        //transform.DOScale(Vector3.one, 1f).SetEase(ease);
         //_currentSpeed = speed;
         //_canRun = true;
     }
+
 
     public void Bounce()
     {
@@ -117,6 +129,14 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     #region POWERUPS
+
+    public void CollectPowerUp()
+    {
+        // Outras ações do Power Up, se necessário.
+        Bounce();
+    }
+
+
     public void SetPowerUpText(string s)
     {
         uiTextPowerUp.text = s;
@@ -126,10 +146,21 @@ public class PlayerController : Singleton<PlayerController>
     {
         _currentSpeed = f;
     }
-    public void ScaleCharacter(float PowerUpSpeedUp, float duration, Ease easeType)
+
+    public void ScaleCharacter(float scaleValue, float duration, Ease easeType)
+    {
+        transform.DOScale(Vector3.one * scaleValue, duration).SetEase(easeType);
+
+        // Para escalar de 1 para 1.2f e depois para 1.
+        //ScaleCharacter(1.2f, 0.5f, Ease.OutBack); OnComplete(() => ScaleCharacter(1f, 0.5f, Ease.OutBack));
+
+    }
+
+
+    /*public void ScaleCharacter(float PowerUpSpeedUp, float duration, Ease easeType)
     {
         transform.DOScale(Vector3.one * PowerUpSpeedUp, duration).SetEase(easeType);
-    }
+    }*/
 
 
     public void SetInvencible(bool b = true)
