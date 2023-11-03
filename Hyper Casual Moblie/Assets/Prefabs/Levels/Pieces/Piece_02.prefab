@@ -160,7 +160,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144550217056456015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -419,7 +419,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5815623931432186877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -720,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972075109115808503, guid: 8c0e07992e8f8e34ca4e035106cc5805, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c0e07992e8f8e34ca4e035106cc5805, type: 3}
@@ -803,10 +803,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9143811049702929017}
     m_Modifications:
-    - target: {fileID: 82625374612871114, guid: 586ee4a378a9c1b458297cea75eb7773, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5819417045231779255, guid: 586ee4a378a9c1b458297cea75eb7773, type: 3}
       propertyPath: m_Name
       value: PFB_Coin (17)

@@ -332,6 +332,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9143811049702929017}
     m_Modifications:
+    - target: {fileID: 836667379964780590, guid: 586ee4a378a9c1b458297cea75eb7773, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5819417045231779255, guid: 586ee4a378a9c1b458297cea75eb7773, type: 3}
       propertyPath: m_Name
       value: PFB_Coin (17)
