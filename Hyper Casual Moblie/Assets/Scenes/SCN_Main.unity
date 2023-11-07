@@ -1340,6 +1340,8 @@ MonoBehaviour:
   coinCollector: {fileID: 368788355}
   animatorManager: {fileID: 1761819596}
   vfxDeath: {fileID: 1316992856}
+  limit: 4
+  limitvector: {x: -5, y: 4}
   _bounceHelper: {fileID: 728190892}
 --- !u!1 &789646755
 GameObject:
@@ -2461,7 +2463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824546404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728190896}
@@ -2525,8 +2527,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.105045594
-        value: 0.86934364
+        time: 0.14694622
+        value: 0.8819207
         inSlope: 1.766869
         outSlope: 1.766869
         tangentMode: 0
