@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: InitialModule.startSizeZ.minMaxState
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 402214046831543642, guid: d13d68d79e3b77c45babf8f2ed5ff61a, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4004763019253668504, guid: d13d68d79e3b77c45babf8f2ed5ff61a, type: 3}
       propertyPath: m_RootOrder
       value: 1
