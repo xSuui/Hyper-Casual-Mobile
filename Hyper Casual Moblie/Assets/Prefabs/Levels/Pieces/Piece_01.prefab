@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_PowerUpInvencible
       objectReference: {fileID: 0}
+    - target: {fileID: 3269902670298162221, guid: ced791b56348cbd46b6667e152dde84d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ced791b56348cbd46b6667e152dde84d, type: 3}
 --- !u!4 &3320492380635030782 stripped
